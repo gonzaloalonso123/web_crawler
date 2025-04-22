@@ -56,7 +56,7 @@ FROM base AS runner
 # Create app user
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
-
+RUN mkdir -p /app/tmp && chown -R nextjs:nodejs /app
 # Set environment
 ENV NODE_ENV=production
 ENV PORT=3001
